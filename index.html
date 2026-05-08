@@ -5,9 +5,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brazza Boost | Agence de Communication Digitale Ultra-Professionnelle</title>
-    <!-- Polices Premium -->
+  
+  <!-- Polices Premium -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
+  
+  <style>
     :root {
       --primary: #008CFF; /* Bleu Logo */
       --secondary: #0A1128; /* Bleu Nuit Logo */
@@ -21,7 +23,9 @@
       --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
       --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    
     body { 
       font-family: 'Plus Jakarta Sans', sans-serif; 
       color: var(--text-main); 
@@ -29,13 +33,25 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+
     /* --- Animations de Défilement --- */
     .reveal { opacity: 0; transform: translateY(50px); transition: var(--transition); }
     .reveal-down { opacity: 0; transform: translateY(-50px); transition: var(--transition); }
     .active { opacity: 1; transform: translateY(0); }
+
     .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
     /* --- Navigation --- */
-    .nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .nav { 
+      position: fixed; 
+      top: 0; 
+      width: 100%; 
+      z-index: 1000; 
+      background: rgba(255,255,255,0.85); 
+      -webkit-backdrop-filter: blur(20px); 
+      backdrop-filter: blur(20px); 
+      border-bottom: 1px solid rgba(0,0,0,0.05); 
+    }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 90px; }
     .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; }
     .logo-box img { height: 55px; border-radius: 12px; transition: 0.3s; }
@@ -43,6 +59,7 @@
     .nav-menu { display: flex; gap: 35px; }
     .nav-menu a { text-decoration: none; color: var(--secondary); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
     .nav-menu a:hover { color: var(--primary); }
+
     /* --- Hero Section --- */
     .hero { padding: 180px 0 100px; background: radial-gradient(circle at 90% 10%, #E0F2FF 0%, #FFFFFF 40%); }
     .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
@@ -51,6 +68,7 @@
     .hero-content p { font-size: 1.3rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; }
     .hero-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
     .hero-image img { width: 100%; height: 550px; object-fit: cover; }
+
     /* --- Boutons Premium --- */
     .btn { 
       display: inline-flex; align-items: center; padding: 18px 36px; border-radius: 100px; 
@@ -59,11 +77,13 @@
     }
     .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 15px 30px rgba(0,140,255,0.25); }
     .btn-primary:hover { background: var(--secondary); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+
     /* --- Sections --- */
     section { padding: 120px 0; }
     .section-intro { text-align: center; max-width: 800px; margin: 0 auto 80px; }
     .section-intro .tag { color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; display: block; margin-bottom: 15px; }
     .section-intro h2 { font-size: 2.8rem; color: var(--secondary); font-weight: 800; }
+
     /* --- Services Cards --- */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
     .service-card { 
@@ -75,21 +95,23 @@
     .service-card h3 { font-size: 1.6rem; margin-bottom: 20px; color: var(--secondary); }
     .service-card p { color: var(--text-muted); margin-bottom: 30px; }
     .service-card .price-tag { font-size: 2rem; font-weight: 800; color: var(--primary); display: block; margin-bottom: 30px; }
+
     /* --- Ads Branding Section --- */
     .ads-dark { background: var(--secondary); border-radius: 40px; padding: 80px; color: var(--white); position: relative; overflow: hidden; }
     .ads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
     .ad-item { background: rgba(255,255,255,0.05); padding: 40px; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.1); }
     .ad-item h4 { font-size: 1.5rem; margin-bottom: 15px; }
+
     /* --- Témoignages Humains --- */
     .testimonial-card { background: var(--bg-light); padding: 40px; border-radius: var(--radius-lg); text-align: center; margin-top: 50px; }
     .testimonial-card img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin: -85px auto 20px; border: 5px solid var(--white); }
     
     /* --- SECTION FAQ --- */
     .faq-container { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
-    .faq-item { background: var(--white); border-radius: var(--radius-md); padding: 30px; border: 1px solid #E2E8F0; transition: 0.3s; }
+    .faq-item { background: var(--white); border-radius: var(--radius-md); padding: 30px; border: 1px solid #E2E8F0; transition: 0.3s; cursor: pointer; }
     .faq-item:hover { border-color: var(--primary); box-shadow: var(--shadow-soft); }
     .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 800; color: var(--secondary); font-size: 1.2rem; }
-    .faq-answer { margin-top: 15px; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
+    .faq-answer { margin-top: 15px; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; display: none; }
 
     /* --- Footer Ultra-Pro --- */
     .footer { background: var(--secondary); color: var(--white); padding: 100px 0 0; }
@@ -107,7 +129,7 @@
     .whatsapp-float { 
       position: fixed; bottom: 40px; right: 40px; background: #25D366; 
       width: 70px; height: 70px; border-radius: 50%; display: grid; place-items: center; 
-      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); z-index: 1000; transition: 0.3s;
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); z-index: 1000; transition: 0.3s; 
     }
     .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
 
@@ -118,7 +140,7 @@
     }
   </style>
 </head>
-<body id="home"> <!-- ID pour le bouton "À propos" ou retour accueil -->
+<body id="home">
   <nav class="nav">
     <div class="wrap nav-inner">
       <a href="#home" class="logo-box">
@@ -147,7 +169,7 @@
         </div>
       </div>
       <div class="hero-image reveal">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Équipe Digitale">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Agence Digitale Brazzaville">
       </div>
     </div>
   </header>
@@ -166,7 +188,6 @@
         <span class="price-tag">50 000 FCFA <small style="font-size: 1rem; color: var(--text-muted);">/mois</small></span>
         <a href="https://wa.me/242066995050" class="btn btn-primary" style="width: 100%; justify-content: center;">Confier mes réseaux</a>
       </div>
-            
       <div class="service-card reveal" style="border-top: 5px solid var(--primary);">
         <span class="icon">🎬</span>
         <h3 id="realisations">Production Vidéo Pro</h3>
@@ -174,7 +195,6 @@
         <span class="price-tag">Dès 35 000 FCFA</span>
         <a href="https://wa.me/242066995050" class="btn btn-primary" style="width: 100%; justify-content: center;">Commander une vidéo</a>
       </div>
-
       <div class="service-card reveal">
         <span class="icon">💡</span>
         <h3>Consulting & Formation</h3>
@@ -182,28 +202,6 @@
         <span class="price-tag">12 500 FCFA</span>
         <a href="https://wa.me/242066995050" class="btn btn-primary" style="width: 100%; justify-content: center;">Acheter le module</a>
       </div>
-    </div>
-  </section>
-
-  <!-- SECTION : CRÉATION DE CONTENU -->
-  <section id="content" style="background: #fff; padding-top: 0;">
-    <div class="wrap">
-        <div class="section-intro reveal">
-            <span class="tag">Contenu de Marque</span>
-            <h2>Donnez de la voix à votre business</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <h3>Pack Créatif Essentiel</h3>
-                <p>Idéal pour débuter : Identité visuelle, logos et chartes graphiques pour une image pro.</p>
-                <span class="price-tag">Sur Devis</span>
-            </div>
-            <div class="service-card reveal">
-                <h3>Rédaction Web & Copywriting</h3>
-                <p>Des textes qui vendent pour vos sites, blogs et newsletters.</p>
-                <span class="price-tag">Dès 15 000 FCFA</span>
-            </div>
-        </div>
     </div>
   </section>
 
@@ -215,20 +213,17 @@
         <h2>Activez la machine à revenus</h2>
       </div>
       <div class="services-grid">
-        <div class="service-card reveal">
-          <h3>Pack Personnel</h3>
-          <p>L'entrée de gamme pour explorer la monétisation sereinement au Congo.</p>
-          <span class="price-tag">5 175 FCFA</span>
-        </div>
         <div class="service-card reveal" style="background: var(--secondary); color: white;">
-          <h3 style="color: white;">Pack Influenceur</h3>
-          <p style="color: rgba(255,255,255,0.7);">Le choix favori des créateurs. Profil optimisé et prêt à l'emploi.</p>
-          <span class="price-tag" style="color: var(--primary);">10 350 FCFA</span>
+          <h3 style="color: white;">Compte TikTok monétisé Influenceur et Créateur de Contenu</h3>
+          <p style="color: rgba(255,255,255,0.7);">Le choix idéal pour les créateurs. Profil optimisé et prêt à la monétisation au Congo.</p>
+          <span class="price-tag" style="color: var(--primary);">15 000 FCFA</span>
+          <a href="https://wa.me/242066995050" class="btn btn-primary" style="width: 100%; justify-content: center;">Obtenir mon compte</a>
         </div>
         <div class="service-card reveal">
-          <h3>Pack Entreprise</h3>
-          <p>Puissance maximale avec bonus de sponsorisation inclus.</p>
-          <span class="price-tag">15 525 FCFA</span>
+          <h3>Compte TikTok monétisé Entreprise et Boutique en Ligne</h3>
+          <p>La solution ultime pour vendre vos produits et services avec accès aux outils publicitaires pro.</p>
+          <span class="price-tag">25 000 FCFA</span>
+          <a href="https://wa.me/242066995050" class="btn btn-primary" style="width: 100%; justify-content: center;">Propulser mon business</a>
         </div>
       </div>
     </div>
@@ -243,19 +238,19 @@
       </div>
       <div class="ads-grid">
         <div class="ad-item reveal-down">
-          <img src="https://img.icons8.com/color/96/facebook-new.png" alt="FB">
+          <img src="https://img.icons8.com/color/96/facebook-new.png" alt="Publicité Facebook Congo">
           <h4>Facebook Ads</h4>
           <p>5 Jours de visibilité</p>
           <b style="color: var(--primary); font-size: 1.4rem;">12 450 FCFA</b>
         </div>
         <div class="ad-item reveal">
-          <img src="https://img.icons8.com/color/96/tiktok.png" alt="TK">
+          <img src="https://img.icons8.com/color/96/tiktok.png" alt="Publicité TikTok Congo">
           <h4>TikTok Ads</h4>
           <p>3 Jours de visibilité</p>
           <b style="color: var(--primary); font-size: 1.4rem;">14 000 FCFA</b>
         </div>
         <div class="ad-item reveal-down">
-          <img src="https://img.icons8.com/color/96/youtube-play.png" alt="YT">
+          <img src="https://img.icons8.com/color/96/youtube-play.png" alt="Publicité YouTube">
           <h4>YouTube Ads</h4>
           <p>2 Jours de visibilité</p>
           <b style="color: var(--primary); font-size: 1.4rem;">17 000 FCFA</b>
@@ -267,7 +262,7 @@
     </div>
   </section>
 
-  <!-- SECTION : ACADEMY -->
+  <!-- SECTION ACADEMY -->
   <section id="academy" style="background: var(--white);">
     <div class="wrap">
         <div class="section-intro reveal">
@@ -299,13 +294,13 @@
     </div>
     <div class="services-grid" style="margin-top: 100px;">
       <div class="testimonial-card reveal">
-        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=150&h=150" alt="Client">
+        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=150&h=150" alt="Client Brazza Boost">
         <p>"Brazza Boost a transformé ma petite boutique en une marque reconnue sur Facebook en seulement un mois."</p>
         <br><b>Arlette M.</b><br><span style="color: var(--primary); font-size: 0.8rem;">E-commerçante</span>
       </div>
       <div class="testimonial-card reveal">
-        <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=150&h=150" alt="Client">
-        <p>"Le pack influenceur TikTok m'a permis de monétiser mon contenu dès la première semaine. Incroyable."</p>
+        <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=150&h=150" alt="Client Brazza Boost">
+        <p>"Le compte TikTok monétisé m'a permis de générer mes premiers euros dès la première semaine. Incroyable."</p>
         <br><b>Jean-Paul K.</b><br><span style="color: var(--primary); font-size: 0.8rem;">Créateur de contenu</span>
       </div>
     </div>
@@ -339,12 +334,12 @@
     </div>
   </section>
 
-  <!-- FOOTER ULTRA-PROFESSIONNEL -->
-  <footer class="footer" id="contact"> <!-- ID pour la section Contact -->
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand reveal">
-          <img src="https://lh3.googleusercontent.com/d/1XyO3V8P_K7PzXUo_I9vY-K8A0P_L0G5Z" alt="Brazza Boost" style="height: 60px; border-radius: 12px;">
+          <img src="https://lh3.googleusercontent.com/d/1XyO3V8P_K7PzXUo_I9vY-K8A0P_L0G5Z" alt="Brazza Boost Agency">
           <p>Brazza Boost est l'agence de référence pour les entreprises et créateurs audacieux au Congo. Nous transformons les idées en actifs digitaux rentables.</p>
         </div>
         <div class="footer-col reveal">
@@ -374,12 +369,11 @@
           </ul>
         </div>
       </div>
-      
       <div class="footer-bottom">
         <p>© 2026 Brazza Boost Agency. Tous droits réservés.</p>
         <div style="display: flex; gap: 20px;">
-          <a href="#" style="color: white; text-decoration: none;">Confidentialité</a>
-          <a href="#" style="color: white; text-decoration: none;">Conditions Générales</a>
+          <a href="javascript:void(0)" style="color: white; text-decoration: none;">Confidentialité</a>
+          <a href="javascript:void(0)" style="color: white; text-decoration: none;">Conditions Générales</a>
         </div>
       </div>
     </div>
@@ -391,20 +385,31 @@
 
   <script>
     // Animation au scroll (Intersection Observer)
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
+    const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('active'); }
       });
     }, observerOptions);
-
     document.querySelectorAll('.reveal, .reveal-down').forEach(el => observer.observe(el));
+
+    // FAQ Interactive
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const span = item.querySelector('span');
+        const isOpen = answer.style.display === 'block';
+        
+        // Fermer les autres (effet accordéon)
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+        document.querySelectorAll('.faq-item span').forEach(s => s.textContent = '+');
+
+        if (!isOpen) {
+          answer.style.display = 'block';
+          span.textContent = '-';
+        }
+      });
+    });
 
     // Smooth Scroll Ultra-Fluide
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -413,14 +418,9 @@
         const targetId = this.getAttribute('href');
         const target = document.querySelector(targetId);
         if(target) {
-            // Calculer l'offset pour ne pas être caché par la barre de navigation
-            const navHeight = document.querySelector('.nav').offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-            
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
+          const navHeight = document.querySelector('.nav').offsetHeight;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         }
       });
     });
