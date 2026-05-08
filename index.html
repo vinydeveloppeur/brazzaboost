@@ -5,14 +5,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brazza Boost | Agence de Communication Digitale Ultra-Professionnelle</title>
-  
-  <!-- Polices Premium -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-  
   <style>
     :root {
-      --primary: #008CFF; /* Bleu Logo */
-      --secondary: #0A1128; /* Bleu Nuit Logo */
+      --primary: #008CFF; /* Logo Bleu */
+      --secondary: #0A1128; /* Logo Bleu Nuit */
       --accent: #5AB4FF;
       --bg-light: #F8FAFC;
       --white: #ffffff;
@@ -23,35 +20,21 @@
       --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
       --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body { 
-      font-family: 'Plus Jakarta Sans', sans-serif; 
-      color: var(--text-main); 
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
       background-color: var(--white);
       line-height: 1.6;
       overflow-x: hidden;
     }
-
     /* --- Animations de Défilement --- */
     .reveal { opacity: 0; transform: translateY(50px); transition: var(--transition); }
     .reveal-down { opacity: 0; transform: translateY(-50px); transition: var(--transition); }
     .active { opacity: 1; transform: translateY(0); }
-
     .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-
     /* --- Navigation --- */
-    .nav { 
-      position: fixed; 
-      top: 0; 
-      width: 100%; 
-      z-index: 1000; 
-      background: rgba(255,255,255,0.85); 
-      -webkit-backdrop-filter: blur(20px); 
-      backdrop-filter: blur(20px); 
-      border-bottom: 1px solid rgba(0,0,0,0.05); 
-    }
+    .nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 90px; }
     .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; }
     .logo-box img { height: 55px; border-radius: 12px; transition: 0.3s; }
@@ -59,7 +42,6 @@
     .nav-menu { display: flex; gap: 35px; }
     .nav-menu a { text-decoration: none; color: var(--secondary); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
     .nav-menu a:hover { color: var(--primary); }
-
     /* --- Hero Section --- */
     .hero { padding: 180px 0 100px; background: radial-gradient(circle at 90% 10%, #E0F2FF 0%, #FFFFFF 40%); }
     .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
@@ -68,51 +50,37 @@
     .hero-content p { font-size: 1.3rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; }
     .hero-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
     .hero-image img { width: 100%; height: 550px; object-fit: cover; }
-
     /* --- Boutons Premium --- */
-    .btn { 
-      display: inline-flex; align-items: center; padding: 18px 36px; border-radius: 100px; 
-      font-weight: 700; text-decoration: none; transition: var(--transition); font-size: 1rem;
-      cursor: pointer; border: none;
-    }
+    .btn { display: inline-flex; align-items: center; padding: 18px 36px; border-radius: 100px; font-weight: 700; text-decoration: none; transition: var(--transition); font-size: 1rem; cursor: pointer; border: none; }
     .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 15px 30px rgba(0,140,255,0.25); }
     .btn-primary:hover { background: var(--secondary); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-
     /* --- Sections --- */
     section { padding: 120px 0; }
     .section-intro { text-align: center; max-width: 800px; margin: 0 auto 80px; }
     .section-intro .tag { color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; display: block; margin-bottom: 15px; }
     .section-intro h2 { font-size: 2.8rem; color: var(--secondary); font-weight: 800; }
-
     /* --- Services Cards --- */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-    .service-card { 
-      background: var(--white); padding: 50px; border-radius: var(--radius-lg); 
-      border: 1px solid #F1F5F9; transition: var(--transition); position: relative;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .service-card { background: var(--white); padding: 50px; border-radius: var(--radius-lg); border: 1px solid #F1F5F9; transition: var(--transition); position: relative; }
     .service-card:hover { border-color: var(--primary); box-shadow: var(--shadow-soft); transform: translateY(-10px); }
     .service-card .icon { font-size: 3rem; margin-bottom: 30px; display: block; }
     .service-card h3 { font-size: 1.6rem; margin-bottom: 20px; color: var(--secondary); }
     .service-card p { color: var(--text-muted); margin-bottom: 30px; }
     .service-card .price-tag { font-size: 2rem; font-weight: 800; color: var(--primary); display: block; margin-bottom: 30px; }
-
     /* --- Ads Branding Section --- */
     .ads-dark { background: var(--secondary); border-radius: 40px; padding: 80px; color: var(--white); position: relative; overflow: hidden; }
-    .ads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
-    .ad-item { background: rgba(255,255,255,0.05); padding: 40px; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+    .ads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 50px; }
+    .ad-item { background: rgba(255,255,255,0.05); padding: 40px; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); }
     .ad-item h4 { font-size: 1.5rem; margin-bottom: 15px; }
-
     /* --- Témoignages Humains --- */
     .testimonial-card { background: var(--bg-light); padding: 40px; border-radius: var(--radius-lg); text-align: center; margin-top: 50px; }
     .testimonial-card img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin: -85px auto 20px; border: 5px solid var(--white); }
-    
     /* --- SECTION FAQ --- */
     .faq-container { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
     .faq-item { background: var(--white); border-radius: var(--radius-md); padding: 30px; border: 1px solid #E2E8F0; transition: 0.3s; cursor: pointer; }
     .faq-item:hover { border-color: var(--primary); box-shadow: var(--shadow-soft); }
     .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 800; color: var(--secondary); font-size: 1.2rem; }
     .faq-answer { margin-top: 15px; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; display: none; }
-
     /* --- Footer Ultra-Pro --- */
     .footer { background: var(--secondary); color: var(--white); padding: 100px 0 0; }
     .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
@@ -124,20 +92,10 @@
     .footer-links a { color: white; opacity: 0.6; text-decoration: none; transition: 0.3s; font-size: 1rem; }
     .footer-links a:hover { opacity: 1; color: var(--primary); padding-left: 5px; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding: 40px 0; display: flex; justify-content: space-between; align-items: center; opacity: 0.6; font-size: 0.9rem; }
-
     /* --- Floating WhatsApp --- */
-    .whatsapp-float { 
-      position: fixed; bottom: 40px; right: 40px; background: #25D366; 
-      width: 70px; height: 70px; border-radius: 50%; display: grid; place-items: center; 
-      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); z-index: 1000; transition: 0.3s; 
-    }
+    .whatsapp-float { position: fixed; bottom: 40px; right: 40px; background: #25D366; width: 70px; height: 70px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); z-index: 1000; transition: 0.3s; }
     .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
-
-    @media (max-width: 1024px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-content h1 { font-size: 3rem; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
+    @media (max-width: 1024px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .hero-content h1 { font-size: 3rem; } .footer-grid { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body id="home">
@@ -174,7 +132,6 @@
     </div>
   </header>
 
-  <!-- SECTION EXPERTISES -->
   <section id="expertises" class="wrap">
     <div class="section-intro reveal">
       <span class="tag">Nos Métiers</span>
@@ -205,7 +162,6 @@
     </div>
   </section>
 
-  <!-- SECTION TIKTOK MONÉTISATION -->
   <section id="tiktok" style="background: var(--bg-light);">
     <div class="wrap">
       <div class="section-intro reveal">
@@ -229,40 +185,60 @@
     </div>
   </section>
 
-  <!-- SECTION SPONSORISATION -->
   <section id="sponsor" class="wrap">
     <div class="ads-dark reveal">
-      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-        <span class="tag" style="color: var(--accent);">Publicité Haute Performance</span>
-        <h2 style="color: white; font-size: 3rem;">Dominez les algorithmes</h2>
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+        <span class="tag" style="color: var(--accent); letter-spacing: 3px;">Publicité Haute Performance</span>
+        <h2 style="color: white; font-size: 3rem; margin-bottom: 15px;">Dominez votre marché</h2>
+        <div style="background: rgba(255,255,255,0.1); display: inline-block; padding: 10px 25px; border-radius: 50px; border: 1px dashed var(--accent);">
+          <p style="color: #A5D7FF; font-weight: 600; margin: 0;">
+            📌 Frais de gestion d'agence : <span style="color: white;">+ 5 000 FCFA</span> / campagne
+          </p>
+        </div>
       </div>
+
       <div class="ads-grid">
-        <div class="ad-item reveal-down">
-          <img src="https://img.icons8.com/color/96/facebook-new.png" alt="Publicité Facebook Congo">
-          <h4>Facebook Ads</h4>
-          <p>5 Jours de visibilité</p>
-          <b style="color: var(--primary); font-size: 1.4rem;">12 450 FCFA</b>
+        <div class="ad-item reveal-down" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 15px; right: -30px; background: var(--primary); color: white; padding: 5px 40px; transform: rotate(45deg); font-size: 0.7rem; font-weight: 800;">4 JOURS</div>
+          <img src="https://img.icons8.com/color/96/facebook-new.png" alt="Facebook Ads" style="margin-bottom: 20px;">
+          <h4 style="margin-bottom: 10px;">Facebook Ads</h4>
+          <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 20px;">Boost de visibilité local</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <b style="color: var(--accent); font-size: 1.8rem; display: block;">12 450 FCFA</b>
+            <span style="font-size: 0.8rem; opacity: 0.5;">Budget publicitaire net</span>
+          </div>
         </div>
-        <div class="ad-item reveal">
-          <img src="https://img.icons8.com/color/96/tiktok.png" alt="Publicité TikTok Congo">
-          <h4>TikTok Ads</h4>
-          <p>3 Jours de visibilité</p>
-          <b style="color: var(--primary); font-size: 1.4rem;">14 000 FCFA</b>
+
+        <div class="ad-item reveal" style="background: rgba(255,255,255,0.03); border: 1px solid var(--primary); position: relative; transform: scale(1.05);">
+          <div style="position: absolute; top: 15px; right: -30px; background: #ff0050; color: white; padding: 5px 40px; transform: rotate(45deg); font-size: 0.7rem; font-weight: 800;">3 JOURS</div>
+          <img src="https://img.icons8.com/color/96/tiktok.png" alt="TikTok Ads" style="margin-bottom: 20px;">
+          <h4 style="margin-bottom: 10px;">TikTok Ads</h4>
+          <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 20px;">Viralité maximale</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <b style="color: var(--accent); font-size: 1.8rem; display: block;">14 000 FCFA</b>
+            <span style="font-size: 0.8rem; opacity: 0.5;">Budget publicitaire net</span>
+          </div>
         </div>
-        <div class="ad-item reveal-down">
-          <img src="https://img.icons8.com/color/96/youtube-play.png" alt="Publicité YouTube">
-          <h4>YouTube Ads</h4>
-          <p>2 Jours de visibilité</p>
-          <b style="color: var(--primary); font-size: 1.4rem;">17 000 FCFA</b>
+
+        <div class="ad-item reveal-down" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); position: relative;">
+          <div style="position: absolute; top: 15px; right: -30px; background: #ff0000; color: white; padding: 5px 40px; transform: rotate(45deg); font-size: 0.7rem; font-weight: 800;">3 JOURS</div>
+          <img src="https://img.icons8.com/color/96/youtube-play.png" alt="YouTube Ads" style="margin-bottom: 20px;">
+          <h4 style="margin-bottom: 10px;">YouTube Ads</h4>
+          <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 20px;">Autorité et notoriété</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <b style="color: var(--accent); font-size: 1.8rem; display: block;">17 000 FCFA</b>
+            <span style="font-size: 0.8rem; opacity: 0.5;">Budget publicitaire net</span>
+          </div>
         </div>
       </div>
+
       <div style="text-align: center; margin-top: 60px;">
-        <a href="https://wa.me/242066995050" class="btn btn-primary">Lancer mon Boost</a>
+        <p style="margin-bottom: 20px; font-style: italic; opacity: 0.7;">Note : Votre campagne est configurée par nos experts certifiés sous 24h.</p>
+        <a href="https://wa.me/242066995050" class="btn btn-primary" style="padding: 20px 50px;">Démarrer ma croissance maintenant</a>
       </div>
     </div>
   </section>
 
-  <!-- SECTION ACADEMY -->
   <section id="academy" style="background: var(--white);">
     <div class="wrap">
         <div class="section-intro reveal">
@@ -286,7 +262,6 @@
     </div>
   </section>
 
-  <!-- SECTION TÉMOIGNAGES -->
   <section id="avis" class="wrap">
     <div class="section-intro reveal">
       <span class="tag">Success Stories</span>
@@ -306,7 +281,6 @@
     </div>
   </section>
 
-  <!-- SECTION FAQ -->
   <section id="faq" style="background: var(--bg-light); padding: 100px 0;">
     <div class="wrap">
       <div class="section-intro reveal">
@@ -334,7 +308,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer" id="contact">
     <div class="wrap">
       <div class="footer-grid">
@@ -399,11 +372,8 @@
         const answer = item.querySelector('.faq-answer');
         const span = item.querySelector('span');
         const isOpen = answer.style.display === 'block';
-        
-        // Fermer les autres (effet accordéon)
         document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
         document.querySelectorAll('.faq-item span').forEach(s => s.textContent = '+');
-
         if (!isOpen) {
           answer.style.display = 'block';
           span.textContent = '-';
